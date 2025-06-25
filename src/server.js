@@ -4,6 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
+import router from './routers/index.js';
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(
 
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'));
-// app.use(router);
+app.use(router);
 
 //   app.use(
 //     pino({

@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import authRouter from './auth.js';
+import rentRouter from './rent.js';
 
 const router = Router();
 
-router.use('/auth', authRouter);
+router.use('/rent', rentRouter);
 
 export default router;
