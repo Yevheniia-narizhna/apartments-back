@@ -1,4 +1,4 @@
-import { Apartment } from '../models/apartment';
+import { Apartment } from '../models/apartment.js';
 import fs from 'fs';
 import path from 'path';
 
@@ -13,6 +13,14 @@ export const getAllApartments = async (req, res) => {
 
   const apartments = await Apartment.find(filter);
   res.json(apartments);
+};
+
+export const getApartmentById = async (req, res) => {
+  const apartment = await Apartment.findById(req.params.id);
+  if (!apartment) {
+    return res.status(404).json({ message: 'Apartment not found' });
+  }
+  res.json(apartment);
 };
 
 export const createApartment = async (req, res) => {

@@ -3,6 +3,6 @@ import rentRouter from './rent.js';
 
 const router = Router();
 
-router.use('/rent', rentRouter);
+router.use('/api', rentRouter);
 
 export default router;
